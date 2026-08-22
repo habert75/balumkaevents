@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - BALUMUKA EVENTS</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html">BALUMUKA<span class="logo-accent">EVENTS</span></a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="events.html">EVENTS</a></li>
+                <li><a href="about.html">ABOUT US</a></li>
+                <li><a href="guestlist.html" class="btn-highlight">GUEST LIST / TICKETS</a></li>
+                <li><a href="contact.html" class="active">CONTACT</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-overlay"></div>
+        <div class="container">
+            <h1 class="page-title">GET IN TOUCH</h1>
+            <p class="page-subtitle">We'd love to hear from you</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <h2>SEND US A MESSAGE</h2>
+                    <p class="contact-intro">Have questions, partnership proposals, or want to collaborate? Drop us a message!</p>
+                    
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-email">Email *</label>
+                            <input type="email" id="contact-email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="contact-phone">Phone / WhatsApp</label>
+                            <input type="tel" id="contact-phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="inquiry-type">Inquiry Type *</label>
+                            <select id="inquiry-type" name="inquiry-type" required>
+                                <option value="">Select type...</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="partnership">Partnership / Collaboration</option>
+                                <option value="artist">Artist / Performer Inquiry</option>
+                                <option value="sponsorship">Sponsorship Opportunity</option>
+                                <option value="venue">Venue Partnership</option>
+                                <option value="media">Media / Press</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="6" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-full">SEND MESSAGE</button>
+                    </form>
+                    
+                    <div class="form-success" id="contactSuccess" style="display: none;">
+                        <div class="success-icon">✓</div>
+                        <h3>MESSAGE SENT!</h3>
+                        <p>Thank you for reaching out. We'll get back to you within 24-48 hours.</p>
+                    </div>
+                </div>
+                
+                <!-- Contact Information -->
+                <div class="contact-info-container">
+                    <h2>CONTACT INFORMATION</h2>
+                    
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">📧</div>
+                        <h3>Email</h3>
+                        <p><a href="mailto:info@balumukaevents.cz">info@balumukaevents.cz</a></p>
+                        <p class="contact-note">For general inquiries and bookings</p>
+                    </div>
+                    
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">💬</div>
+                        <h3>WhatsApp</h3>
+                        <p><a href="https://wa.me/420XXXXXXXXX">+420 XXX XXX XXX</a></p>
+                        <p class="contact-note">Quick responses and updates</p>
+                    </div>
+                    
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">📍</div>
+                        <h3>Location</h3>
+                        <p>Prague, Czech Republic</p>
+                        <p class="contact-note">Events across multiple venues</p>
+                    </div>
+                    
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">📱</div>
+                        <h3>Social Media</h3>
+                        <div class="social-links-vertical">
+                            <a href="#" class="social-link-item">📷 Instagram: @balumukaevents</a>
+                            <a href="#" class="social-link-item">📘 Facebook: /balumukaevents</a>
+                            <a href="#" class="social-link-item">💬 WhatsApp Community</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-hours">
+                        <h3>RESPONSE TIME</h3>
+                        <p>We typically respond within:</p>
+                        <ul>
+                            <li>Email: 24-48 hours</li>
+                            <li>WhatsApp: 2-6 hours</li>
+                            <li>Social Media: 24 hours</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnership Section -->
+    <section class="partnership-section">
+        <div class="container">
+            <h2 class="section-title text-center">INTERESTED IN COLLABORATION?</h2>
+            <p class="section-subtitle text-center">We're always looking for exciting partnerships</p>
+            
+            <div class="partnership-grid">
+                <div class="partnership-card">
+                    <div class="partnership-icon">🎤</div>
+                    <h3>ARTISTS & DJs</h3>
+                    <p>Showcase your talent at our events and reach diverse audiences across Prague.</p>
+                </div>
+                
+                <div class="partnership-card">
+                    <div class="partnership-icon">🏢</div>
+                    <h3>VENUE PARTNERS</h3>
+                    <p>Host unforgettable cultural experiences at your venue with our dedicated community.</p>
+                </div>
+                
+                <div class="partnership-card">
+                    <div class="partnership-icon">🤝</div>
+                    <h3>SPONSORS</h3>
+                    <p>Connect with our engaged audience and support African culture in Prague.</p>
+                </div>
+                
+                <div class="partnership-card">
+                    <div class="partnership-icon">📸</div>
+                    <h3>MEDIA & PRESS</h3>
+                    <p>Cover our events and share stories of culture, music, and community.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3 class="footer-logo">BALUMUKA<span>EVENTS</span></h3>
+                    <p>African Music • Dance • Culture</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">📷 Instagram</a>
+                        <a href="#" class="social-link">💬 WhatsApp</a>
+                        <a href="#" class="social-link">📘 Facebook</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>QUICK LINKS</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="guestlist.html">Guest List</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>CONTACT</h4>
+                    <ul class="footer-contact">
+                        <li>📧 info@balumukaevents.cz</li>
+                        <li>📱 WhatsApp: +420 XXX XXX XXX</li>
+                        <li>📍 Prague, Czech Republic</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Balumuka Events. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

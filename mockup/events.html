@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events - BALUMUKA EVENTS</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html">BALUMUKA<span class="logo-accent">EVENTS</span></a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="events.html" class="active">EVENTS</a></li>
+                <li><a href="about.html">ABOUT US</a></li>
+                <li><a href="guestlist.html" class="btn-highlight">GUEST LIST / TICKETS</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-overlay"></div>
+        <div class="container">
+            <h1 class="page-title">OUR EVENTS</h1>
+            <p class="page-subtitle">Experience African Culture Through Music & Dance</p>
+        </div>
+    </section>
+
+    <!-- Events Filter -->
+    <section class="events-filter">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">ALL EVENTS</button>
+                <button class="filter-btn" data-filter="upcoming">UPCOMING</button>
+                <button class="filter-btn" data-filter="parties">PARTIES</button>
+                <button class="filter-btn" data-filter="festivals">FESTIVALS</button>
+                <button class="filter-btn" data-filter="workshops">WORKSHOPS</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Grid -->
+    <section class="events-listing">
+        <div class="container">
+            <div class="events-grid">
+                <!-- Event 1 -->
+                <div class="event-card" data-category="upcoming parties">
+                    <div class="event-image">
+                        <div class="event-tag">FEATURED</div>
+                        <div class="event-image-placeholder afro-meetup"></div>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date">
+                            <span class="date-day">07</span>
+                            <span class="date-month">AUG</span>
+                        </div>
+                        <div class="event-details">
+                            <h3 class="event-title">AFRO MEET-UP</h3>
+                            <div class="event-info">
+                                <span class="event-location">📍 Prague City Center</span>
+                                <span class="event-genre">🎶 AfroHouse • AfroTech</span>
+                            </div>
+                            <p class="event-description">Join us for an intimate evening of African rhythms, cocktails, and shisha in a cozy atmosphere.</p>
+                            <a href="guestlist.html" class="btn btn-small">JOIN GUEST LIST</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 2 -->
+                <div class="event-card" data-category="upcoming parties">
+                    <div class="event-image">
+                        <div class="event-tag hot">HOT</div>
+                        <div class="event-image-placeholder afrorave"></div>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date">
+                            <span class="date-day">15</span>
+                            <span class="date-month">AUG</span>
+                        </div>
+                        <div class="event-details">
+                            <h3 class="event-title">AFRORAVE</h3>
+                            <div class="event-info">
+                                <span class="event-location">📍 Cross Club, Prague</span>
+                                <span class="event-genre">🎶 Afrobeats • Amapiano</span>
+                            </div>
+                            <p class="event-description">The ultimate African music experience with international DJs and live performances.</p>
+                            <a href="guestlist.html" class="btn btn-small">GET TICKETS</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 3 -->
+                <div class="event-card" data-category="upcoming workshops">
+                    <div class="event-image">
+                        <div class="event-tag">WORKSHOP</div>
+                        <div class="event-image-placeholder workshop"></div>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date">
+                            <span class="date-day">22</span>
+                            <span class="date-month">AUG</span>
+                        </div>
+                        <div class="event-details">
+                            <h3 class="event-title">KIZOMBA BASICS</h3>
+                            <div class="event-info">
+                                <span class="event-location">📍 Dance Studio, Prague 2</span>
+                                <span class="event-genre">💃 Dance Workshop</span>
+                            </div>
+                            <p class="event-description">Learn the fundamentals of Kizomba dance with professional instructors.</p>
+                            <a href="guestlist.html" class="btn btn-small">REGISTER NOW</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 4 -->
+                <div class="event-card" data-category="upcoming parties">
+                    <div class="event-image">
+                        <div class="event-tag">NEW</div>
+                        <div class="event-image-placeholder party"></div>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date">
+                            <span class="date-day">29</span>
+                            <span class="date-month">AUG</span>
+                        </div>
+                        <div class="event-details">
+                            <h3 class="event-title">AFRO SUMMER NIGHT</h3>
+                            <div class="event-info">
+                                <span class="event-location">📍 Boat Party, Vltava</span>
+                                <span class="event-genre">🎶 Afrobeats • Dancehall</span>
+                            </div>
+                            <p class="event-description">Experience African music on the water! Cruise the Vltava River with us.</p>
+                            <a href="guestlist.html" class="btn btn-small">GET TICKETS</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 5 -->
+                <div class="event-card" data-category="upcoming parties">
+                    <div class="event-image">
+                        <div class="event-tag">MONTHLY</div>
+                        <div class="event-image-placeholder rooftop"></div>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date">
+                            <span class="date-day">05</span>
+                            <span class="date-month">SEP</span>
+                        </div>
+                        <div class="event-details">
+                            <h3 class="event-title">ROOFTOP AFRO VIBES</h3>
+                            <div class="event-info">
+                                <span class="event-location">📍 Lucerna Music Bar</span>
+                                <span class="event-genre">🎶 AfroHouse • Deep House</span>
+                            </div>
+                            <p class="event-description">Monthly rooftop party featuring the best African house music and sunset views.</p>
+                            <a href="guestlist.html" class="btn btn-small">JOIN GUEST LIST</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 6 -->
+                <div class="event-card featured-large" data-category="upcoming festivals">
+                    <div class="event-image">
+                        <div class="event-tag festival">FESTIVAL</div>
+                        <div class="event-image-placeholder kizomba"></div>
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date">
+                            <span class="date-day">05-09</span>
+                            <span class="date-month">NOV</span>
+                        </div>
+                        <div class="event-details">
+                            <h3 class="event-title">PRAGUE KIZOMBA FESTIVAL 2026</h3>
+                            <div class="event-info">
+                                <span class="event-location">📍 Multiple Venues, Prague</span>
+                                <span class="event-genre">💃 Dance • Workshops • Parties • Fashion</span>
+                            </div>
+                            <p class="event-description">5 Days of Dance, Culture, Fashion & Unforgettable Moments. International instructors, social dancing, parties, and cultural experiences.</p>
+                            <a href="guestlist.html" class="btn btn-small">GET YOUR PASS</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>NEVER MISS AN EVENT</h2>
+                <p>Join our guest list and get exclusive access to upcoming events</p>
+                <a href="guestlist.html" class="btn btn-primary">JOIN GUEST LIST</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3 class="footer-logo">BALUMUKA<span>EVENTS</span></h3>
+                    <p>African Music • Dance • Culture</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">📷 Instagram</a>
+                        <a href="#" class="social-link">💬 WhatsApp</a>
+                        <a href="#" class="social-link">📘 Facebook</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>QUICK LINKS</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="guestlist.html">Guest List</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>CONTACT</h4>
+                    <ul class="footer-contact">
+                        <li>📧 info@balumukaevents.cz</li>
+                        <li>📱 WhatsApp: +420 XXX XXX XXX</li>
+                        <li>📍 Prague, Czech Republic</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Balumuka Events. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

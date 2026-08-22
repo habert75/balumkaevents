@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guest List & Tickets - BALUMUKA EVENTS</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html">BALUMUKA<span class="logo-accent">EVENTS</span></a>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="events.html">EVENTS</a></li>
+                <li><a href="about.html">ABOUT US</a></li>
+                <li><a href="guestlist.html" class="btn-highlight active">GUEST LIST / TICKETS</a></li>
+                <li><a href="contact.html">CONTACT</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="page-header-overlay"></div>
+        <div class="container">
+            <h1 class="page-title">GET ACCESS</h1>
+            <p class="page-subtitle">Join the guest list or purchase tickets to our events</p>
+        </div>
+    </section>
+
+    <!-- Guest List Form Section -->
+    <section class="guestlist-section">
+        <div class="container">
+            <div class="guestlist-grid">
+                <!-- Guest List Form -->
+                <div class="form-container">
+                    <div class="form-header">
+                        <h2>JOIN GUEST LIST</h2>
+                        <p>Get on the list for free entry or discounted tickets</p>
+                    </div>
+                    
+                    <form class="guestlist-form" id="guestlistForm">
+                        <div class="form-group">
+                            <label for="fullname">Full Name *</label>
+                            <input type="text" id="fullname" name="fullname" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone / WhatsApp *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="event">Select Event *</label>
+                            <select id="event" name="event" required>
+                                <option value="">Choose an event...</option>
+                                <option value="afro-meetup">Afro Meet-Up - 7 August 2026</option>
+                                <option value="afrorave">AfroRave - 15 August 2026</option>
+                                <option value="kizomba-basics">Kizomba Basics Workshop - 22 August 2026</option>
+                                <option value="summer-night">Afro Summer Night - 29 August 2026</option>
+                                <option value="rooftop">Rooftop Afro Vibes - 5 September 2026</option>
+                                <option value="kizomba-festival">Prague Kizomba Festival - 5-9 November 2026</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="guests">Number of Guests</label>
+                            <select id="guests" name="guests">
+                                <option value="1">1 Person</option>
+                                <option value="2">2 People</option>
+                                <option value="3">3 People</option>
+                                <option value="4">4 People</option>
+                                <option value="5+">5+ People</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="newsletter" checked>
+                                <span>Subscribe to newsletter for event updates</span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-full">SUBMIT</button>
+                    </form>
+                    
+                    <div class="form-success" id="formSuccess" style="display: none;">
+                        <div class="success-icon">✓</div>
+                        <h3>YOU'RE ON THE LIST!</h3>
+                        <p>Check your email for confirmation and event details.</p>
+                    </div>
+                </div>
+                
+                <!-- Upcoming Events Sidebar -->
+                <div class="events-sidebar">
+                    <h3>UPCOMING EVENTS</h3>
+                    
+                    <div class="sidebar-event">
+                        <div class="sidebar-date">
+                            <span class="date-day">07</span>
+                            <span class="date-month">AUG</span>
+                        </div>
+                        <div class="sidebar-info">
+                            <h4>AFRO MEET-UP</h4>
+                            <p>📍 Prague City Center</p>
+                            <p>🎶 AfroHouse • AfroTech</p>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-event">
+                        <div class="sidebar-date">
+                            <span class="date-day">15</span>
+                            <span class="date-month">AUG</span>
+                        </div>
+                        <div class="sidebar-info">
+                            <h4>AFRORAVE</h4>
+                            <p>📍 Cross Club, Prague</p>
+                            <p>🎶 Afrobeats • Amapiano</p>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-event">
+                        <div class="sidebar-date">
+                            <span class="date-day">22</span>
+                            <span class="date-month">AUG</span>
+                        </div>
+                        <div class="sidebar-info">
+                            <h4>KIZOMBA BASICS</h4>
+                            <p>📍 Dance Studio, Prague 2</p>
+                            <p>💃 Workshop</p>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-event featured">
+                        <div class="sidebar-date">
+                            <span class="date-day">05-09</span>
+                            <span class="date-month">NOV</span>
+                        </div>
+                        <div class="sidebar-info">
+                            <h4>PRAGUE KIZOMBA FESTIVAL 2026</h4>
+                            <p>📍 Multiple Venues</p>
+                            <p>💃 5-Day Festival</p>
+                        </div>
+                    </div>
+                    
+                    <a href="events.html" class="btn btn-outline btn-full">VIEW ALL EVENTS</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <h2 class="section-title text-center">GUEST LIST BENEFITS</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎟️</div>
+                    <h3>FREE OR DISCOUNTED ENTRY</h3>
+                    <p>Get on the list for complimentary access or special pricing</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>PRIORITY ACCESS</h3>
+                    <p>Skip the line and enter faster at our events</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📧</div>
+                    <h3>EARLY NOTIFICATIONS</h3>
+                    <p>Be the first to know about new events and special offers</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎁</div>
+                    <h3>EXCLUSIVE PERKS</h3>
+                    <p>Access to VIP areas and special promotions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3 class="footer-logo">BALUMUKA<span>EVENTS</span></h3>
+                    <p>African Music • Dance • Culture</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">📷 Instagram</a>
+                        <a href="#" class="social-link">💬 WhatsApp</a>
+                        <a href="#" class="social-link">📘 Facebook</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>QUICK LINKS</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="guestlist.html">Guest List</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>CONTACT</h4>
+                    <ul class="footer-contact">
+                        <li>📧 info@balumukaevents.cz</li>
+                        <li>📱 WhatsApp: +420 XXX XXX XXX</li>
+                        <li>📍 Prague, Czech Republic</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Balumuka Events. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
