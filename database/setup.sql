@@ -1,11 +1,9 @@
 -- =====================================================
 -- BALUMUKA EVENTS - Database Setup
 -- =====================================================
--- Run this file in phpMyAdmin or MySQL console to create the database
+-- Run this file in phpMyAdmin against your already-created database
+-- (do not create/switch database here - shared hosting users can't run CREATE DATABASE/USE)
 -- =====================================================
-
-CREATE DATABASE IF NOT EXISTS balumka_events CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE balumka_events;
 
 -- =====================================================
 -- Admin Users Table
