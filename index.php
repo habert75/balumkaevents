@@ -35,9 +35,9 @@ $featuredEvents = getEvents(['featured' => 1, 'status' => 'upcoming', 'limit' =>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.php" class="active">HOME</a></li>
                 <li><a href="events.php">EVENTS</a></li>
-                <li><a href="mockup/about.html">ABOUT US</a></li>
-                <li><a href="mockup/guestlist.html" class="btn-highlight">GUEST LIST / TICKETS</a></li>
-                <li><a href="mockup/contact.html">CONTACT</a></li>
+                <li><a href="about.php">ABOUT US</a></li>
+                <li><a href="guestlist.php" class="btn-highlight">GUEST LIST / TICKETS</a></li>
+                <li><a href="contact.php">CONTACT</a></li>
             </ul>
         </div>
     </nav>
@@ -50,7 +50,7 @@ $featuredEvents = getEvents(['featured' => 1, 'status' => 'upcoming', 'limit' =>
             <p class="hero-subtitle">African music, dance, nightlife and unforgettable experiences in Prague.</p>
             <div class="hero-buttons">
                 <a href="events.php" class="btn btn-primary">UPCOMING EVENTS</a>
-                <a href="mockup/guestlist.html" class="btn btn-secondary">JOIN GUEST LIST</a>
+                <a href="guestlist.php" class="btn btn-secondary">JOIN GUEST LIST</a>
             </div>
         </div>
         <div class="scroll-indicator">
@@ -104,7 +104,7 @@ $featuredEvents = getEvents(['featured' => 1, 'status' => 'upcoming', 'limit' =>
                                         <?php endif; ?>
                                     </div>
                                     <p class="event-description"><?= e($event['description']) ?></p>
-                                    <a href="mockup/guestlist.html" class="btn btn-small">
+                                    <a href="guestlist.php" class="btn btn-small">
                                         <?= $event['category'] === 'festivals' ? 'GET YOUR PASS' : 'JOIN GUEST LIST' ?>
                                     </a>
                                 </div>
@@ -135,7 +135,7 @@ $featuredEvents = getEvents(['featured' => 1, 'status' => 'upcoming', 'limit' =>
                     <p class="about-text">
                         From intimate meet-ups and nightlife parties to major festivals, we connect people through music, movement and culture.
                     </p>
-                    <a href="mockup/about.html" class="btn btn-outline">LEARN MORE</a>
+                    <a href="about.php" class="btn btn-outline">LEARN MORE</a>
                 </div>
             </div>
         </div>
@@ -173,9 +173,9 @@ $featuredEvents = getEvents(['featured' => 1, 'status' => 'upcoming', 'limit' =>
                     <ul class="footer-links">
                         <li><a href="index.php">Home</a></li>
                         <li><a href="events.php">Events</a></li>
-                        <li><a href="mockup/about.html">About Us</a></li>
-                        <li><a href="mockup/guestlist.html">Guest List</a></li>
-                        <li><a href="mockup/contact.html">Contact</a></li>
+                        <li><a href="about.php">About Us</a></li>
+                        <li><a href="guestlist.php">Guest List</a></li>
+                        <li><a href="contact.php">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">

@@ -11,16 +11,18 @@ if (!defined('BALUMKA_ACCESS')) {
 }
 
 // Database Configuration
-// TODO: Replace with the credentials shown in Hostinger hPanel > Databases > MySQL Databases
-define('DB_HOST', 'localhost');                // Database host (check hPanel, may not be 'localhost')
-define('DB_NAME', 'u472674549_balumka_db');    // Database name
-define('DB_USER', 'u472674549_balumka_user');  // Database username
-define('DB_PASS', 'BalumkaJmul2026');         // Database password you set when creating the DB user
+$host = $_SERVER['HTTP_HOST'] ?? '';
+$isLocal = in_array($host, ['localhost', 'localhost:80', 'localhost:8080', '127.0.0.1', '127.0.0.1:80', '127.0.0.1:8080'], true);
+
+define('DB_HOST', 'localhost');
+define('DB_NAME', $isLocal ? 'balumka_events' : 'u472674549_balumka_db');
+define('DB_USER', $isLocal ? 'root' : 'u472674549_balumka_user');
+define('DB_PASS', $isLocal ? '' : 'BalumkaJmul2026');
 define('DB_CHARSET', 'utf8mb4');
 
 // Site Configuration
 define('SITE_NAME', 'BALUMUKA EVENTS');
-define('SITE_URL', 'https://balumukaevents.com');
+define('SITE_URL', $isLocal ? 'http://localhost/Balumkaevents' : 'https://balumukaevents.com');
 define('ADMIN_EMAIL', 'admin@balumukaevents.com');
 
 // File Upload Configuration
@@ -32,7 +34,7 @@ define('ALLOWED_EXTENSIONS', ['jpg', 'jpeg', 'png', 'gif', 'webp', 'avif']);
 // Session Configuration
 ini_set('session.cookie_httponly', 1);
 ini_set('session.use_only_cookies', 1);
-ini_set('session.cookie_secure', 1); // Site is served over HTTPS
+ini_set('session.cookie_secure', $isLocal ? 0 : 1);
 session_name('BALUMKA_SESSION');
 
 if (session_status() === PHP_SESSION_NONE) {

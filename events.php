@@ -35,9 +35,9 @@ $events = getEvents(['status' => 'upcoming', 'order_by' => 'date', 'order_dir' =
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.php">HOME</a></li>
                 <li><a href="events.php" class="active">EVENTS</a></li>
-                <li><a href="mockup/about.html">ABOUT US</a></li>
-                <li><a href="mockup/guestlist.html" class="btn-highlight">GUEST LIST / TICKETS</a></li>
-                <li><a href="mockup/contact.html">CONTACT</a></li>
+                <li><a href="about.php">ABOUT US</a></li>
+                <li><a href="guestlist.php" class="btn-highlight">GUEST LIST / TICKETS</a></li>
+                <li><a href="contact.php">CONTACT</a></li>
             </ul>
         </div>
     </nav>
@@ -120,12 +120,15 @@ $events = getEvents(['status' => 'upcoming', 'order_by' => 'date', 'order_dir' =
                                                 <?= e($event['genre']) ?>
                                             </span>
                                         <?php endif; ?>
+                                        <?php if (!empty($event['price_info'])): ?>
+                                            <span class="event-price">💰 <?= e($event['price_info']) ?></span>
+                                        <?php endif; ?>
                                     </div>
                                     <p class="event-description"><?= e(substr($event['description'], 0, 120)) ?><?= strlen($event['description']) > 120 ? '...' : '' ?></p>
                                     <?php if ($event['ticket_link']): ?>
                                         <a href="<?= e($event['ticket_link']) ?>" class="btn btn-small" target="_blank">GET TICKETS</a>
                                     <?php else: ?>
-                                        <a href="mockup/guestlist.html" class="btn btn-small">JOIN GUEST LIST</a>
+                                        <a href="guestlist.php" class="btn btn-small">JOIN GUEST LIST</a>
                                     <?php endif; ?>
                                 </div>
                             </div>
@@ -142,7 +145,7 @@ $events = getEvents(['status' => 'upcoming', 'order_by' => 'date', 'order_dir' =
             <div class="cta-content">
                 <h2>NEVER MISS AN EVENT</h2>
                 <p>Join our guest list and get exclusive access to upcoming events</p>
-                <a href="mockup/guestlist.html" class="btn btn-primary">JOIN GUEST LIST</a>
+                <a href="guestlist.php" class="btn btn-primary">JOIN GUEST LIST</a>
             </div>
         </div>
     </section>
@@ -165,9 +168,9 @@ $events = getEvents(['status' => 'upcoming', 'order_by' => 'date', 'order_dir' =
                     <ul class="footer-links">
                         <li><a href="index.php">Home</a></li>
                         <li><a href="events.php">Events</a></li>
-                        <li><a href="mockup/about.html">About Us</a></li>
-                        <li><a href="mockup/guestlist.html">Guest List</a></li>
-                        <li><a href="mockup/contact.html">Contact</a></li>
+                        <li><a href="about.php">About Us</a></li>
+                        <li><a href="guestlist.php">Guest List</a></li>
+                        <li><a href="contact.php">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">

@@ -502,6 +502,11 @@ section {
     color: var(--gray-text);
 }
 
+.event-price {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
 .event-description {
     font-size: 14px;
     color: var(--gray-text);
