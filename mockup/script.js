@@ -104,31 +104,63 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // === GUEST LIST FORM ===
     const guestlistForm = document.getElementById('guestlistForm');
+    const guestsSelect = document.getElementById('guests');
+    const groupNotice = document.getElementById('groupNotice');
+
+    if (guestsSelect && groupNotice) {
+        guestsSelect.addEventListener('change', function() {
+            groupNotice.style.display = this.value === '4+' ? 'block' : 'none';
+        });
+    }
+
+    const formError = document.getElementById('formError');
+
     if (guestlistForm) {
         guestlistForm.addEventListener('submit', function(e) {
             e.preventDefault();
 
-            // Get form data
-            const formData = {
-                fullname: document.getElementById('fullname').value,
-                email: document.getElementById('email').value,
-                phone: document.getElementById('phone').value,
-                event: document.getElementById('event').value,
-                guests: document.getElementById('guests').value
-            };
+            // Group bookings (4+) are arranged via DM/WhatsApp instead of this form
+            if (guestsSelect && guestsSelect.value === '4+') {
+                groupNotice.style.display = 'block';
+                groupNotice.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                return;
+            }
 
-            // Simulate form submission
-            console.log('Guest List Submission:', formData);
+            const submitBtn = guestlistForm.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'SUBMITTING...';
+            if (formError) formError.style.display = 'none';
 
-            // Show success message
-            guestlistForm.style.display = 'none';
-            document.getElementById('formSuccess').style.display = 'block';
-
-            // Scroll to success message
-            document.getElementById('formSuccess').scrollIntoView({ 
-                behavior: 'smooth', 
-                block: 'center' 
-            });
+            fetch(window.location.href, {
+                method: 'POST',
+                body: new FormData(guestlistForm),
+                headers: { 'X-Requested-With': 'XMLHttpRequest' }
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        guestlistForm.style.display = 'none';
+                        document.getElementById('formSuccess').style.display = 'block';
+                        document.getElementById('formSuccess').scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'center'
+                        });
+                    } else if (formError) {
+                        formError.textContent = (data.errors || ['Something went wrong. Please try again.']).join(' ');
+                        formError.style.display = 'block';
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = originalBtnText;
+                    }
+                })
+                .catch(() => {
+                    if (formError) {
+                        formError.textContent = 'Network error. Please try again or contact us directly.';
+                        formError.style.display = 'block';
+                    }
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalBtnText;
+                });
         });
     }
 

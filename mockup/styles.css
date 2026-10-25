@@ -935,6 +935,35 @@ section {
     border-color: var(--primary-color);
 }
 
+.group-notice {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: var(--dark-tertiary);
+    border-left: 3px solid var(--primary-color);
+    border-radius: 8px;
+}
+
+.form-error {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(255, 70, 70, 0.1);
+    border-left: 3px solid #ff4646;
+    border-radius: 8px;
+    color: #ff8080;
+    font-size: 14px;
+}
+
+.group-notice p {
+    font-size: 14px;
+    color: var(--gray-text);
+    margin: 0;
+}
+
+.group-notice a {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
 .checkbox-group {
     display: flex;
     align-items: center;

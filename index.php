@@ -155,43 +155,7 @@ $featuredEvents = getEvents(['featured' => 1, 'status' => 'upcoming', 'limit' =>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-section">
-                    <h3 class="footer-logo">BALUMUKA<span>EVENTS</span></h3>
-                    <p>African Music • Dance • Culture</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link">📷 Instagram</a>
-                        <a href="#" class="social-link">💬 WhatsApp</a>
-                        <a href="#" class="social-link">📘 Facebook</a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>QUICK LINKS</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.php">Home</a></li>
-                        <li><a href="events.php">Events</a></li>
-                        <li><a href="about.php">About Us</a></li>
-                        <li><a href="guestlist.php">Guest List</a></li>
-                        <li><a href="contact.php">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>CONTACT</h4>
-                    <ul class="footer-contact">
-                        <li>📧 info@balumukaevents.cz</li>
-                        <li>📱 WhatsApp: +420 XXX XXX XXX</li>
-                        <li>📍 Prague, Czech Republic</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; <?= date('Y') ?> Balumuka Events. All rights reserved. | <a href="<?= SITE_URL ?>/admin/login.php" style="color: #666;">Admin</a></p>
-            </div>
-        </div>
-    </footer>
+    <?php include __DIR__ . '/includes/footer.php'; ?>
 
     <script src="mockup/script.js"></script>
 </body>

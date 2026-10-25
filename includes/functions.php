@@ -135,7 +135,15 @@ function uploadImage($file, $oldImage = null) {
     
     // Check for upload errors
     if ($file['error'] !== UPLOAD_ERR_OK) {
-        throw new Exception('File upload error: ' . $file['error']);
+        $uploadErrors = [
+            UPLOAD_ERR_INI_SIZE => 'The image exceeds the server upload_max_filesize limit (' . ini_get('upload_max_filesize') . ').',
+            UPLOAD_ERR_FORM_SIZE => 'The image exceeds the maximum size allowed by the form.',
+            UPLOAD_ERR_PARTIAL => 'The image was only partially uploaded. Please try again.',
+            UPLOAD_ERR_NO_TMP_DIR => 'Server is missing a temporary folder for uploads.',
+            UPLOAD_ERR_CANT_WRITE => 'Server failed to write the uploaded file to disk.',
+            UPLOAD_ERR_EXTENSION => 'A server extension stopped the file upload.',
+        ];
+        throw new Exception($uploadErrors[$file['error']] ?? 'File upload error: ' . $file['error']);
     }
     
     // Check file size
@@ -328,6 +336,51 @@ function e($string) {
  */
 function isFutureDate($date) {
     return strtotime($date) > time();
+}
+
+/**
+ * Generate a short unique confirmation code for a registration
+ */
+function generateConfirmationCode() {
+    return strtoupper(bin2hex(random_bytes(4)));
+}
+
+/**
+ * Send guest list confirmation email via PHP mail()
+ * Note: on local XAMPP, mail() requires sendmail/SMTP to be configured to actually deliver.
+ */
+function sendGuestListConfirmationEmail($toEmail, $fullName, $event, $guests, $confirmationCode) {
+    $eventTitle = $event['title'] ?? 'the event';
+    $eventDate = !empty($event['date']) ? formatDate($event['date'], 'l, j F Y') : 'TBA';
+    $eventTime = $event['time'] ?? 'TBA';
+    $eventLocation = $event['location'] ?? 'TBA';
+
+    $subject = "You're on the guest list - " . $eventTitle;
+
+    $body = '<div style="font-family: Arial, sans-serif; color:#222; max-width:500px;">'
+        . '<h2 style="color:#FF6B35;">You\'re on the list, ' . e($fullName) . '!</h2>'
+        . '<p>Thanks for joining the guest list for <strong>' . e($eventTitle) . '</strong>.</p>'
+        . '<table cellpadding="4" style="margin:15px 0;">'
+        . '<tr><td><strong>Date:</strong></td><td>' . e($eventDate) . '</td></tr>'
+        . '<tr><td><strong>Time:</strong></td><td>' . e($eventTime) . '</td></tr>'
+        . '<tr><td><strong>Location:</strong></td><td>' . e($eventLocation) . '</td></tr>'
+        . '<tr><td><strong>Guests:</strong></td><td>' . (int)$guests . '</td></tr>'
+        . '<tr><td><strong>Confirmation code:</strong></td><td>' . e($confirmationCode) . '</td></tr>'
+        . '</table>'
+        . '<p>Please keep this email or your confirmation code handy for entry.</p>'
+        . '<p>See you there!<br>' . e(SITE_NAME) . '</p>'
+        . '</div>';
+
+    $headers = "MIME-Version: 1.0\r\n";
+    $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+    $headers .= "From: " . SITE_NAME . " <" . ADMIN_EMAIL . ">\r\n";
+    $headers .= "Reply-To: " . ADMIN_EMAIL . "\r\n";
+
+    $sent = @mail($toEmail, $subject, $body, $headers);
+    if (!$sent) {
+        error_log('sendGuestListConfirmationEmail: mail() returned false for ' . $toEmail);
+    }
+    return $sent;
 }
 
 /**

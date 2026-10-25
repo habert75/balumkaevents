@@ -83,9 +83,10 @@
     </style>
 </head>
 <body>
+    
     <div class="coming-soon">
         <div class="logo">BALUMUKA<span class="logo-accent">EVENTS</span></div>
-        <h1>SOMETHING EXCITING<br>IS COMING SOON.</h1>
+        <h1>SOMETHING EXCITING<br>IS COMING SOON!.</h1>
         <div class="divider"></div>
         <p class="subtitle">We're putting the final touches on our new home for African music, dance and culture in Prague. Stay tuned!</p>
         <p class="contact">Questions? Reach us at <a href="mailto:Jmulimbwe@gmail.com">Jmulimbwe@gmail.com</a></p>

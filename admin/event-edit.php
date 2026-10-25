@@ -19,7 +19,11 @@ if (!$event) {
 $errors = [];
 $formData = $event;
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && empty($_POST) && empty($_FILES) && (int)($_SERVER['CONTENT_LENGTH'] ?? 0) > 0) {
+    // PHP drops $_POST/$_FILES entirely when the request exceeds post_max_size
+    $errors[] = 'The image you selected is too large for the server to accept (upload limit: ' . ini_get('post_max_size') . '). Please choose a smaller image and try again.';
+    $formData = $event;
+} elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Sanitize input
     $formData = [
         'title' => sanitize($_POST['title'] ?? ''),

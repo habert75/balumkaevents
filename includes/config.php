@@ -23,7 +23,7 @@ define('DB_CHARSET', 'utf8mb4');
 // Site Configuration
 define('SITE_NAME', 'BALUMUKA EVENTS');
 define('SITE_URL', $isLocal ? 'http://localhost/Balumkaevents' : 'https://balumukaevents.com');
-define('ADMIN_EMAIL', 'admin@balumukaevents.com');
+define('ADMIN_EMAIL', 'info@balumukaevents.com');
 
 // File Upload Configuration
 define('UPLOAD_DIR', dirname(__DIR__) . '/uploads/events/');
