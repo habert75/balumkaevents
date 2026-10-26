@@ -36,7 +36,7 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: ${{ secrets.FTP_SERVER_DIR }}
+          server-dir: public_html/
           protocol: ftp
           dangerous-clean-slate: false
           state-name: ftp-deploy-sync-state.json
@@ -57,4 +57,4 @@ jobs:
 
       - name: Debug - list remote directory
         run: |
-          curl -s --list-only "ftp://${{ secrets.FTP_SERVER }}/${{ secrets.FTP_SERVER_DIR }}/" --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}"
+          curl -s --list-only "ftp://${{ secrets.FTP_SERVER }}/public_html/" --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}"
