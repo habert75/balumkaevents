@@ -14,10 +14,14 @@ if (!defined('BALUMKA_ACCESS')) {
 $host = $_SERVER['HTTP_HOST'] ?? '';
 $isLocal = in_array($host, ['localhost', 'localhost:80', 'localhost:8080', '127.0.0.1', '127.0.0.1:80', '127.0.0.1:8080'], true);
 
+// Production credentials live in db-credentials.php (gitignored, never committed)
+$credentialsFile = __DIR__ . '/db-credentials.php';
+$prodCreds = (!$isLocal && file_exists($credentialsFile)) ? require $credentialsFile : [];
+
 define('DB_HOST', 'localhost');
-define('DB_NAME', $isLocal ? 'balumka_events' : 'u472674549_balumka_db');
-define('DB_USER', $isLocal ? 'root' : 'u472674549_balumka_user');
-define('DB_PASS', $isLocal ? '' : 'BalumkaJmul2026');
+define('DB_NAME', $isLocal ? 'balumka_events' : ($prodCreds['name'] ?? ''));
+define('DB_USER', $isLocal ? 'root' : ($prodCreds['user'] ?? ''));
+define('DB_PASS', $isLocal ? '' : ($prodCreds['pass'] ?? ''));
 define('DB_CHARSET', 'utf8mb4');
 
 // Site Configuration

@@ -1,0 +1,55 @@
+name: Deploy to Hostinger
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [closed]
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: FTP Deploy
+    runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request' || github.event.pull_request.merged == true
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Write production DB credentials
+        run: |
+          cat > includes/db-credentials.php <<'EOF'
+          <?php
+          return [
+              'name' => '${{ secrets.DB_NAME }}',
+              'user' => '${{ secrets.DB_USER }}',
+              'pass' => '${{ secrets.DB_PASS }}',
+          ];
+          EOF
+
+      - name: Deploy via FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ${{ secrets.FTP_SERVER_DIR }}
+          protocol: ftps
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            database/**
+            mockup/README.md
+            myairbridge-lyzrqPhzB6m/**
+            myairbridge-lyzrqPhzB6m.zip
+            balumkaeventswp/**
+            README.md
+            QUICK_START.md
+            SETUP_GUIDE.md
+            LOCALTUNNEL.md
+            Eents.txt
