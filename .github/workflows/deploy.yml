@@ -39,6 +39,7 @@ jobs:
           server-dir: ${{ secrets.FTP_SERVER_DIR }}
           protocol: ftp
           dangerous-clean-slate: false
+          state-name: ftp-deploy-sync-state.json
           exclude: |
             **/.git*
             **/.git*/**
@@ -53,3 +54,7 @@ jobs:
             SETUP_GUIDE.md
             LOCALTUNNEL.md
             Eents.txt
+
+      - name: Debug - list remote directory
+        run: |
+          curl -s --list-only "ftp://${{ secrets.FTP_SERVER }}/${{ secrets.FTP_SERVER_DIR }}/" --user "${{ secrets.FTP_USERNAME }}:${{ secrets.FTP_PASSWORD }}"
