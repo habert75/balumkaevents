@@ -47,7 +47,7 @@ $featuredEvents = getEvents(['featured' => 1, 'status' => 'upcoming', 'limit' =>
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1 class="hero-title">EXPERIENCE AFRICA.<br>LIVE THE CULTURE.</h1>
-            <p class="hero-subtitle">African music, dance, nightlife and unforgettable experiences in Prague and beyond.</p>
+            <p class="hero-subtitle">African music, dance, nightlife and unforgettable experiences in Prague and beyond!</p>
             <div class="hero-buttons">
                 <a href="events.php" class="btn btn-primary">UPCOMING EVENTS</a>
                 <a href="guestlist.php" class="btn btn-secondary">JOIN GUEST LIST</a>
